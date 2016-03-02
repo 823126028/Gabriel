@@ -5,3 +5,7 @@ added in MANIFEST.MF
 Premain-Class: gabriel.hotswap.Agent
 Agent-Class: gabriel.hotswap.Agent
 Can-Retransform-Classes: true
+
+使用tools.jar
+操作:
+	java -classpath   .../tools.jar;..../Attach pid -c ...class -p ../../
