@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Premain-Class: gabriel.hotswap.Agent
+Agent-Class: gabriel.hotswap.Agent
+Can-Retransform-Classes: true
