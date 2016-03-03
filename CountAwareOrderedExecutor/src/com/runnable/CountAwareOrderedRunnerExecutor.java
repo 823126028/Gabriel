@@ -9,18 +9,17 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 控制每种key的可执行队列只能同时存在指定的数量,并且要按顺序执行。
- * 可用于游戏服务器Netty异步处理客户端数据的组建(同一个玩家只能存在指定数量的包没有进行处理,超过的直接丢弃,防止游戏
-
-负载过重或外挂恶意破坏)
+ * 提供一种相同发出者的所有任务都必须按顺序执行，且规定了同时存在且未执行的任务最大数目，超过将丢弃
+ * 可用于游戏服务器Netty异步处理客户端数据的组件(同一个玩家只能存在指定数量的包没有进行处理,超过的直接丢弃,防止游戏
+     负载过重或外挂恶意破坏)
  * @author Gabriel
  *
  */
 public class CountAwareOrderedRunnerExecutor extends ThreadPoolExecutor{
 	private int maxCount;
-	/**存储单个KEY的可执行数目*/
+	/**每个KEY都有一个待执行数目统计，多出将丢弃*/
 	private ConcurrentMap<String, AtomicInteger> countMap = new ConcurrentHashMap<String, AtomicInteger>();
-	/**每个key的内部执行器,每个key一个内部执行器，来使里面的任务按顺序执行*/
+	/**每个key都有一个内部执行器，来使里面的任务按顺序执行*/
 	private ConcurrentMap<String, InnerRunnerExecutor> executorMap = new ConcurrentHashMap<String, 
 
 InnerRunnerExecutor>();
