@@ -1,7 +1,7 @@
-the project can be used to change the code in runningtime,which doesnt change the sign of the method;
+该项目用于热更线上运行的java程序，在保证方法签名一致的情况下可以修改方法的内部逻辑
 
-important tips:
-added in MANIFEST.MF 
+在打包MANIFEST.MF的时候需要添加如下:
+MANIFEST.MF 
 Premain-Class: gabriel.hotswap.Agent
 Agent-Class: gabriel.hotswap.Agent
 Can-Retransform-Classes: true
