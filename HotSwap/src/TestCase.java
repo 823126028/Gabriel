@@ -1,6 +1,8 @@
+
+/**åŠ¨æ›´çš„æµ‹è¯•ç±»ä»…ç”¨äºŽæµ‹è¯•*/
 public class TestCase {
 	public static void print(){
-		System.out.println("---------");
+		System.out.println("hotswap test");
 	}
 	public static void main(String[] args){
 		while(true){
@@ -8,7 +10,6 @@ public class TestCase {
 				Thread.sleep(5000);
 				print();
 			} catch (InterruptedException e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
 				e.printStackTrace();
 			}
 		}
