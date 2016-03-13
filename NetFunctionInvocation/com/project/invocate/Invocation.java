@@ -39,7 +39,7 @@ public class Invocation {
 			incepter.interceptor(this, incepterIterator,request);
 		}else{
 			try {
-				method.invoke(invokerObj, adaptor.adapt(request.getParamMap()));
+				method.invoke(invokerObj, adaptor.adapt(request));
 			} catch (IllegalAccessException | IllegalArgumentException
 					| InvocationTargetException e) {
 				e.printStackTrace();
