@@ -18,6 +18,14 @@ Class PlayerEvent : pid,type,param1,param2,......
 通过注解反射,可以将数据库存储和实际对象进行转化使业务逻辑更清楚
 class ChargeActivity:@paramName("param1") int chargeTime @paramName("param2") int chargeNum
 
+NetFunctionInvocation：
+项目名:网络接口注解IOC控制框架:
+模仿struct框架对包中的接口层进行扫描。
+原理:
+1.标有@Action的类和它的继承者们是网络接口类,在其中标有@Command("player@getPlayerName")的代表调用方法,
+@param("value")代表需要传的参数名.
+2.当带有command和参数map的request从网络中传来即可经过拦截器调用指定函数。
+
 
 
 
