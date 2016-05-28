@@ -30,6 +30,9 @@ SlabManager:链式对象池
 1.特点根据局部性原则,对上次找到的cleanObject进行记录,下次继续从这点找.
 2.release的时候根据大小比例进行shrink.add的时候根据当前使用量double总量
 
+ConsistentHash:一致性hash
+项目功能:解决分布式缓存宕机和加机器问题的一致性hash
+
 
 
 
